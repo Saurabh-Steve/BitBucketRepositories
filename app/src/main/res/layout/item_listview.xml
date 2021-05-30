@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="@dimen/imageview_dimension"
+        android:layout_height="@dimen/imageview_dimension"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_toolbar" />
+
+    <com.bitbucketrepositories.widgets.RobotoMediumTextView
+        android:id="@+id/author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:gravity="top"
+        android:text="mbinary"
+        android:textColor="@color/text_color_dark"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/item_image"
+        app:layout_constraintTop_toTopOf="@id/item_image"
+        app:layout_constraintBottom_toTopOf="@id/item_image"/>
+
+    <com.bitbucketrepositories.widgets.RobotoMediumTextView
+        android:id="@+id/reponame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:gravity="bottom"
+        android:text="USTC-CS-Courses"
+        android:textColor="@color/text_color_dark"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/item_image"
+        app:layout_constraintLeft_toRightOf="@id/item_image" />
+
+    <include
+        android:id="@+id/expanded_view"
+        android:visibility="gone"
+        layout="@layout/expanded_list_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/separator"
+        app:layout_constraintStart_toStartOf="@+id/reponame"
+        app:layout_constraintTop_toBottomOf="@id/item_image" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/separator_width"
+        android:background="#EAEAEA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/expanded_view"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
