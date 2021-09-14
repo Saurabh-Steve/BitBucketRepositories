@@ -9,7 +9,6 @@ import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
-import io.reactivex.schedulers.Schedulers
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito.mock

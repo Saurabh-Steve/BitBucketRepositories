@@ -1,7 +1,6 @@
 package com.bitbucketrepositories
 
 import com.bitbucketrepositories.networking.Repository
-import java.lang.Exception
 
 class RepositoryComparator constructor(val sortingFilter: String) :
     Comparator<Repository> {

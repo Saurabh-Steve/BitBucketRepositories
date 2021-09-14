@@ -2,11 +2,11 @@ package com.bitbucketrepositories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+
 import androidx.recyclerview.widget.RecyclerView
-import com.bitbucketrepositories.networking.Repository
 
 class RepositoriesAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    var repositories : List<Repository> = emptyList()
+    var repositories : List<RepositoryViewModel> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_listview, parent, false)
@@ -21,7 +21,7 @@ class RepositoriesAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         (holder as RepositoriesViewHolder).bindView(repositories[position])
     }
 
-    fun setItems(repos: List<Repository>) {
+    fun setItems(repos: List<RepositoryViewModel>) {
         repositories = repos
         notifyDataSetChanged()
     }

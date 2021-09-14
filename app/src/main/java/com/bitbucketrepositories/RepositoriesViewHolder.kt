@@ -11,8 +11,8 @@ import android.view.View.VISIBLE
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.bitbucketrepositories.networking.Repository
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -22,7 +22,7 @@ import com.bumptech.glide.request.target.Target
 
 class RepositoriesViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bindView(viewModel: Repository) {
+    fun bindView(viewModel: RepositoryViewModel) {
         val imageView = view.findViewById<ImageView>(R.id.item_image)
         Glide
             .with(view.context)

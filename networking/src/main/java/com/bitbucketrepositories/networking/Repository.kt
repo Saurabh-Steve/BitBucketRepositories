@@ -1,6 +1,8 @@
 package com.bitbucketrepositories.networking
 
-data class Repository(
+import androidx.lifecycle.ViewModel
+
+data class Repository (
     val link: String,
     val avatarUrl: String,
     val type: String,
