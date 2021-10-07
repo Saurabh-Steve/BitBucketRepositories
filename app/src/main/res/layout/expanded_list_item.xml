@@ -4,116 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.bitbucketrepositories.Convertor" />
+
         <variable
-            name="repoviewmodel"
+            name="vm"
             type="com.bitbucketrepositories.RepositoryViewModel" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginRight="16dp">
 
-    <com.bitbucketrepositories.widgets.PingFangTextView
-        android:id="@+id/description"
-        style="@style/expandedViewTextStyle"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxWidth="320dp"
-        android:maxLines="3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@{repoviewmodel.description}"
-        tools:text="some descriptionddddd............." />
+        android:layout_marginRight="16dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:weightSum="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/description">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        <com.bitbucketrepositories.widgets.PingFangTextView
+            android:id="@+id/description"
+            style="@style/expandedViewTextStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:maxWidth="320dp"
+            android:maxLines="3"
+            android:text="@{vm.description}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="some descriptionddddd............." />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/language_image"
-                android:layout_width="@dimen/expaneded_imageview_dimension"
-                android:layout_height="@dimen/expaneded_imageview_dimension"
-                android:src="@drawable/solid_circle"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:weightSum="3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description">
 
-            <com.bitbucketrepositories.widgets.RobotoRegularTextView
-                android:id="@+id/language_text"
-                style="@style/expandedViewTextStyle"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/language_image"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="C++" />
+                android:layout_weight="1">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/language_image"
+                    android:layout_width="@dimen/expaneded_imageview_dimension"
+                    android:layout_height="@dimen/expaneded_imageview_dimension"
+                    android:src="@drawable/solid_circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
+                <com.bitbucketrepositories.widgets.RobotoRegularTextView
+                    android:id="@+id/language_text"
+                    style="@style/expandedViewTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{vm.language}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/language_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="C++" />
 
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/fork_image"-->
-<!--                android:layout_width="@dimen/expaneded_imageview_dimension"-->
-<!--                android:layout_height="@dimen/expaneded_imageview_dimension"-->
-<!--                android:src="@drawable/ic_star"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintLeft_toLeftOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--            <com.bitbucketrepositories.widgets.RobotoRegularTextView-->
-<!--                android:id="@+id/fork_text"-->
-<!--                style="@style/expandedViewTextStyle"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="4dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintLeft_toRightOf="@id/fork_image"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                tools:text="345" />-->
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/share_image"
-                android:layout_width="@dimen/expaneded_imageview_dimension"
-                android:layout_height="@dimen/expaneded_imageview_dimension"
-                android:src="@drawable/ic_fork"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.bitbucketrepositories.widgets.RobotoRegularTextView
-                android:id="@+id/share_text"
-                style="@style/expandedViewTextStyle"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/share_image"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="3246" />
+                android:layout_weight="1">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.appcompat.widget.LinearLayoutCompat>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/share_image"
+                    android:layout_width="@dimen/expaneded_imageview_dimension"
+                    android:layout_height="@dimen/expaneded_imageview_dimension"
+                    android:onClick="@{(v)-> Convertor.INSTANCE.openUrl(v,vm.link)}"
+                    android:src="@drawable/ic_fork"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.bitbucketrepositories.widgets.RobotoRegularTextView
+                    android:id="@+id/share_text"
+                    style="@style/expandedViewTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:onClick="@{(v) -> Convertor.INSTANCE.openUrl(v, vm.link)}"
+                    android:text="Click for detail"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/share_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="3246" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
