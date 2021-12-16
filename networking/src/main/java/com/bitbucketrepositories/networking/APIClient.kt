@@ -25,7 +25,8 @@ class APIClient {
             retrofit = Retrofit.Builder()
                 .baseUrl("https://api.bitbucket.org/2.0/")
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+//                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .client(client)
                 .build()
 

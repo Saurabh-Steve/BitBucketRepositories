@@ -11,7 +11,7 @@ data class RepositoryViewModel(
     val language: String,
     val display_name: String,
     val description: String
-) : ViewModel() {
+) {
     constructor(repository: Repository) : this(
         link = repository.link,
         avatarUrl = repository.avatarUrl,
