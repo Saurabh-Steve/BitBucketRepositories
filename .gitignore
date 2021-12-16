@@ -7,6 +7,14 @@ local.properties
 .idea/workspace.xml
 .idea/navEditor.xml
 .idea/assetWizardSettings.xml
+.idea/vcs.xml
+.idea/misc.xml
+.idea/jarRepositories.xml
+.idea/gradle.xml
+.idea/deploymentTargetDropDown.xml
+.idea/codeStyles
+.idea/compiler.xml
+
 .DS_Store
 build
 /captures
